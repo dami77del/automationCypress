@@ -8,17 +8,19 @@ describe('my 4 test Suite', () => {
         cy.get('[value="Confirm"]').click()
         cy.get('#confirmbtn').click();
 
+        //Moncha
         cy.on('window:alert', (str) => {
-            //Moncha
-    
             expect(str).to.equal('Hello , share this practice page and share your knowledge')
-    
         })
-        cy.on('window:confirm',(str)=>{
-
+        cy.on('window:confirm', (str) => {
             expect(str).to.equal('Hello , Are you sure you want to confirm?')
-
         })
+        // next page
+        cy.get('#opentab').invoke('removeAttr', 'target').click()
+        cy.url().should('include','rahulshettyacademy' )
+        // go to
+        cy.go('back')
+
 
     });
 
