@@ -30,6 +30,5 @@ Cypress.Commands.add('selectProductToCard', (NameProduct) =>{
         if ( el.text().includes(NameProduct)) {
           cy.get('button.btn.btn-info').eq(index).click()
         } 
-
   })
 })
