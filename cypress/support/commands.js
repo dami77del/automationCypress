@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// -- this is Product command in shop
+Cypress.Commands.add('selectProductToCard', (NameProduct) =>{
+    cy.get('h4.card-title').each((el,index,list) =>{
+        if ( el.text().includes(NameProduct)) {
+          cy.get('button.btn.btn-info').eq(index).click()
+        } 
+
+  })
+})
