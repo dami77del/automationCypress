@@ -19,7 +19,7 @@ describe('my firt test Framework', () => {
         const productPage = new ProductPage()
         const chekOutPage = new CheckOutPage()
 
-        cy.visit('https://www.rahulshettyacademy.com/angularpractice/')
+        cy.visit(Cypress.env('URL')+"angularpractice/")
         homePage.getEditBox().type(this.data.name)
         homePage.getGender().select(this.data.gender)
         homePage.getTwoWayDataBinding().should('have.value', this.data.name)

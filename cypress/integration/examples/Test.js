@@ -10,7 +10,8 @@ describe('my8 test Suite', () => {
         // next page
         cy.frameLoaded("#courses-iframe")
         cy.iframe().find("a[href='mentorship']").eq(0).click()
-       cy.iframe().find("h1[class*='pricing-title']").should('have.length',2)
+        cy.wait(5000)
+       cy.iframe().find(".pricing-title").should('have.length',2)
     });
 })
 
