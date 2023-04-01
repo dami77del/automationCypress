@@ -1,5 +1,5 @@
 /// <reference types="Cypress" />
-import { Given,When,Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given,When,Then, And } from "@badeball/cypress-cucumber-preprocessor";
 import HomePage from '../../../pageObjects/HomePage'
 import ProductPage from '../../../pageObjects/ProductPage'
 import CheckOutPage from '../../../pageObjects/CheckOutPage'
@@ -22,7 +22,7 @@ When("I add items to Cart", () => {
 });
 
 //And Validate the total prices
-When('Validate the total prices',()=>
+Then('Validate the total prices',()=>
 {
   cy.wait(2000)
     var sum=0
@@ -55,6 +55,28 @@ Then('select the country submit and verify thank you', () => {
     const actual = element.text()
     expect(actual.includes("Success")).to.be.true
   })
+})
+//When i fill the form details
+When('I fill the form details', () =>
+ {  cy.wait(2000)
+  homePage.getEditBox().type(dataExample.name)
+  homePage.getGender().select(dataExample.gender)
+ 
+
+})
+
+Then('Validate the forms behaviour', ()=>
+{
+  homePage.getTwoWayDataBinding().should('have.value', dataExample.name)
+  homePage.getEditBox().should('have.attr', 'minlength', '2')
+  homePage.getEntrepreneurDisabled().should('be.disabled')
+
+})
+
+Then('Select the Shop Page',()=>
+{
+  homePage.getShopTab().contains('Shop').click()
+
 })
 
 
