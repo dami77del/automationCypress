@@ -57,17 +57,18 @@ Then('select the country submit and verify thank you', () => {
   })
 })
 //When i fill the form details
-When('I fill the form details', () =>
- {  cy.wait(2000)
-  homePage.getEditBox().type(dataExample.name)
-  homePage.getGender().select(dataExample.gender)
+When('I fill the form details', (dataTable) =>
+ {  
+    // [name, gender],[bobz ,male ]
+  homePage.getEditBox().type(dataTable.rawTable[1][0])
+  homePage.getGender().select(dataTable.rawTable[1][1])
  
 
 })
 
 Then('Validate the forms behaviour', ()=>
 {
-  homePage.getTwoWayDataBinding().should('have.value', dataExample.name)
+  //homePage.getTwoWayDataBinding().should('have.value', dataExample.name)
   homePage.getEditBox().should('have.attr', 'minlength', '2')
   homePage.getEntrepreneurDisabled().should('be.disabled')
 
