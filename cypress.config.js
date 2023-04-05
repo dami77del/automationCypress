@@ -28,7 +28,7 @@ module.exports = defineConfig({
   CYPRESS_RECORD_KEY:'4da8e755-c335-488c-94a9-b811e0937469',
   e2e: {
     setupNodeEvents,
-    specPattern: 'cypress/integration/examples/BDD/*.feature',
+    specPattern: 'cypress/integration/examples/',
   },
 });
 
