@@ -9,7 +9,9 @@ There are many more WOW Factors like above which you will come across in Trainin
  
 Web Automation with Cypress + Cypress Test Runner features + Cypress Integration Testing + Cypress API Testing + Cypress Database Testing + 2 Top class Javascript Frameworks from Scratch using Mocha & Cucumber
 
- ---- Introduction to Cypress ----
+ ---- Introduction to Cypress ---- 
+ 
+
 Cypress Architecture
 Cypress Installation & Project Setup
 Cypress Test Runner features
